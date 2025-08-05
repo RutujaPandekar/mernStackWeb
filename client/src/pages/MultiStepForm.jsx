@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import YourDetails from '../forms/YourDetails';
 import EducationalDetails from '../forms/EducationalDetails';
 import FamilyDetails from '../forms/FamilyDetails';

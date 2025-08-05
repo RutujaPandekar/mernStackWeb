@@ -1,25 +1,24 @@
-// Example: src/forms/YourDetails.jsx
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setOthers } from '../slices/formSlice';
 
-export default function YourDetails({ onNext }) {
-  const [form, setForm] = useState({ name: '', email: '' });
+export default function OtherDetails({ onSubmit }) {
+  const [form, setForm] = useState({ hobby: '', notes: '' });
   const dispatch = useDispatch();
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleNext = () => {
+  const handleSubmit = () => {
     dispatch(setOthers(form));
-    onNext();
+    onSubmit(); 
   };
 
   return (
     <div>
-      <h2>Your Details</h2>
-      <input name="name" onChange={handleChange} placeholder="Name" />
-      <input name="email" onChange={handleChange} placeholder="Email" />
-      <button onClick={handleNext}>Next</button>
+      <h2>Other Details</h2>
+      <input name="hobby" onChange={handleChange} placeholder="Hobby" />
+      <input name="notes" onChange={handleChange} placeholder="Notes" />
+      <button onClick={handleSubmit}>Submit</button>
     </div>
   );
 }

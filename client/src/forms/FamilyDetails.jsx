@@ -1,5 +1,4 @@
-// Example: src/forms/YourDetails.jsx
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setFamily } from '../slices/formSlice';
 

@@ -1,4 +1,3 @@
-// Example: src/forms/YourDetails.jsx
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setYourDetails } from '../slices/formSlice';
