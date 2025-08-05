@@ -124,4 +124,4 @@ const handleSubmit = async () => {
 
 ## 🧑‍💻 Author
 
-Built with ❤️ by [Your Name]
+Built with ❤️ by [Rutuja Pandekar]
