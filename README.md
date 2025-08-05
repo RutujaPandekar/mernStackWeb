@@ -122,6 +122,13 @@ const handleSubmit = async () => {
 
 ---
 
+- client folder run by 
+$ npm run dev
+- server folder run by 
+$ node index.js
+
+
+
 ## 🧑‍💻 Author
 
 Built with ❤️ by [Rutuja Pandekar]
