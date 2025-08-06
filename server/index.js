@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
 const formRoutes = require('./routes/formRoutes');
+require('dotenv').config();
 
 const app = express();
 const allowedOrigins = [
@@ -35,4 +36,4 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500).json({ error: err.message || 'Something went wrong!' });
 });
 
-app.listen(3000, () => console.log("Server running on http://localhost:3000"));
+app.listen(process.env.PORT || 3000, () => console.log(`Server running on http://localhost:${process.env.PORT || 3000}`));

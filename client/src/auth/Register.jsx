@@ -12,7 +12,8 @@ export default function Register() {
       alert('Registration successful! Please login.');
       navigate('/login');
     } catch (err) {
-      alert('Registration failed');
+      const msg = err.response?.data?.error || 'Registration failed';
+      alert(msg);
     }
   };
 

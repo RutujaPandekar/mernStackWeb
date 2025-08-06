@@ -105,7 +105,7 @@ const handleSubmit = async () => {
   const formData = useSelector((state) => state.form);
 
   try {
-    await axios.post('http://localhost:3000/api/submit-form', formData);
+    await axios.post('pi/submit-form', formData);
     alert('Form submitted successfully');
   } catch (err) {
     console.error('Submission failed:', err);
