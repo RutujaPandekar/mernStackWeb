@@ -5,9 +5,14 @@ const authRoutes = require('./routes/authRoutes');
 const formRoutes = require('./routes/formRoutes');
 
 const app = express();
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://transcendent-rolypoly-45df6c.netlify.app'
+];
+
 app.use(cors({
-  origin: 'https://transcendent-rolypoly-45df6c.netlify.app',
-  credentials: true, 
+  origin: allowedOrigins,
+  credentials: true,
 }));
 app.use(express.json());
 
