@@ -13,9 +13,7 @@ export default function MultiStepForm() {
   const handleSubmit = async () => {
     try {
       const token = localStorage.getItem('token');
-      await axios.post(
-        'http://localhost:3000/api/submit-form',
-        formData,
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/submit-form`, formData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       alert("Form Submitted!");

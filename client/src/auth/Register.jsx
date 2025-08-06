@@ -8,7 +8,7 @@ export default function Register() {
 
   const handleRegister = async () => {
     try {
-      await axios.post('http://localhost:3000/api/auth/register', form);
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/register`, form);
       alert('Registration successful! Please login.');
       navigate('/login');
     } catch (err) {
