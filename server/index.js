@@ -5,7 +5,10 @@ const authRoutes = require('./routes/authRoutes');
 const formRoutes = require('./routes/formRoutes');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'https://transcendent-rolypoly-45df6c.netlify.app',
+  credentials: true, 
+}));
 app.use(express.json());
 
 mongoose.connect('mongodb://127.0.0.1:27017/formDB')
