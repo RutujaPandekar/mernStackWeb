@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setEducation } from '../slices/formSlice';
 
-export default function YourDetails({ onNext }) {
+export default function EducationalDetails({ onNext }) {
   const [form, setForm] = useState({ name: '', email: '' });
   const dispatch = useDispatch();
 

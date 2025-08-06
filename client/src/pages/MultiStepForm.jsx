@@ -12,7 +12,12 @@ export default function MultiStepForm() {
 
   const handleSubmit = async () => {
     try {
-      await axios.post('http://localhost:3000/api/submit-form', formData);
+      const token = localStorage.getItem('token');
+      await axios.post(
+        'http://localhost:3000/api/submit-form',
+        formData,
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
       alert("Form Submitted!");
     } catch (error) {
       console.error(error);
