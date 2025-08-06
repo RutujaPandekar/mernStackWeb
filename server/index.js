@@ -7,7 +7,7 @@ const formRoutes = require('./routes/formRoutes');
 const app = express();
 const allowedOrigins = [
   'http://localhost:5174',
-  'https://profound-scone-f44f54.netlify.app/',
+  'https://mernstackweb-ysex.onrender.com/',
 ];
 
 app.use(cors({
