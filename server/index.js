@@ -7,8 +7,9 @@ const formRoutes = require('./routes/formRoutes');
 const app = express();
 const allowedOrigins = [
   'http://localhost:5173',
+  'http://localhost:5174',
   'https://transcendent-rolypoly-45df6c.netlify.app',
-  'https://transcendent-rolypoly-45df6c.netlify.app'
+  'https://boisterous-llama-2ea3b8.netlify.app'
 ];
 
 app.use(cors({
