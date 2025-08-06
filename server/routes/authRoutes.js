@@ -13,6 +13,8 @@ router.post('/register', async (req, res) => {
     res.status(201).json({ message: 'User registered' });
   } catch (err) {
     res.status(400).json({ error: 'Email already exists' });
+    console.log(err, "safdghj");
+    
   }
 });
 

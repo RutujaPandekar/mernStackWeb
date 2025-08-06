@@ -6,10 +6,8 @@ const formRoutes = require('./routes/formRoutes');
 
 const app = express();
 const allowedOrigins = [
-  'http://localhost:5173',
   'http://localhost:5174',
-  'https://transcendent-rolypoly-45df6c.netlify.app',
-  'https://boisterous-llama-2ea3b8.netlify.app'
+  'https://profound-scone-f44f54.netlify.app/',
 ];
 
 app.use(cors({
@@ -18,7 +16,7 @@ app.use(cors({
 }));
 app.use(express.json());
 
-mongoose.connect('mongodb://127.0.0.1:27017/formDB')
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.error(err));
 
