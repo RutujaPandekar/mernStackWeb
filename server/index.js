@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const authRoutes = require('./routes/authRoutes');
 const formRoutes = require('./routes/formRoutes');
 
 const app = express();
@@ -11,6 +12,19 @@ mongoose.connect('mongodb://127.0.0.1:27017/formDB')
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.error(err));
 
-app.use('/api', formRoutes);
+app.get('/', (req, res) => res.send('API is running'));
+
+app.use('/api/auth', authRoutes);
+
+app.use('/api/forms', formRoutes);
+
+app.use((req, res, next) => {
+  res.status(404).json({ error: 'Not Found' });
+});
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(err.status || 500).json({ error: err.message || 'Something went wrong!' });
+});
 
 app.listen(3000, () => console.log("Server running on http://localhost:3000"));
