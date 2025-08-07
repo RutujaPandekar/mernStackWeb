@@ -8,6 +8,8 @@ export default function Register() {
 
   const handleRegister = async () => {
     try {
+      console.log('Registering with:', form);
+      // await axios.post('https://mernstackweb-ezjd.onrender.com/api/auth/register', form);
       await axios.post('http://localhost:3000/api/auth/register', form);
       alert('Registration successful! Please login.');
       navigate('/login');

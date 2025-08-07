@@ -9,7 +9,9 @@ export default function Login() {
   const handleLogin = async () => {
     try {
       console.log('Logging in with:', form);
+
       const res = await axios.post('http://localhost:3000/api/auth/login', form);
+      // const res = await axios.post('https://mernstackweb-ezjd.onrender.com/api/auth/login', form);
       localStorage.setItem('token', res.data.token);
       navigate('/');
     } catch (err) {
